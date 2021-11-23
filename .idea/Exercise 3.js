@@ -18,5 +18,11 @@ console.log(Google + Amazon + Facebook);
 3.
 var ClassNotFull = true
 var ClassDoesntConf = true
-var CanEnroll = ClassNotFull && ClassDoesntConf
-console.log
+    if (ClassNotFull && ClassDoesntConf) {
+        console.log("Welcome to Class")
+}else{
+        console.log("Better luck next time")
+}
+
+ 4.
+``
