@@ -66,7 +66,7 @@ let correctPass = "(Secret)"
         console.log( alert("Incorrect password, try again: ", correctPass))
     }*/
 
-// for loops you know how many iterations you want to do
+// FOR LOOPS you know how many iterations you want to do
 /*
 for (1; 2 ; 3; ){
     //code;
@@ -88,4 +88,12 @@ for (let eggs = 0; eggs<= 48; eggs++){
 }*/
 
 // NESTED LOOPS
+/*
+for (let counter =1; counter <=5; counter++){
+    console.log('First Counter: ' + counter);
 
+    for (let counterTwo = 5; counterTwo > 0; counterTwo--){
+        console.log('Second counter: ' + counterTwo);
+    }
+}
+*/

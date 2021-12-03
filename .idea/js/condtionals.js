@@ -127,7 +127,12 @@ console.log(calculateTotal(2, 100))
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+ var luckyNumber = Math.floor(Math.random() * 6);
+ let totalAmount = prompt(" What is the total amount?")
+    alert("Your lucky number is " + luckyNumber +
+        "Your previous price was  " + totalAmount +
+        "Your new price is " + calculateTotal(luckyNum, totalAmount));
+
 
 /**
  * TODO:
