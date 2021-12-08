@@ -113,8 +113,8 @@
             },
         }
     ]
-    console.log(books[0].title)
-    console.log(books[0].author.firstName)
+/*    console.log(books[0].title)
+    console.log(books[0].author.firstName)*/
 
 
     /**
@@ -142,8 +142,8 @@
      *      ...
      */
     for (let i = 0; i <= 4; i++){
-        console.log("Book # " + (i + 1) + "\n" + " Title: " + books[i].title + "\n" + "Author: "
-        + books[i].author.firstName + " " + books[i].author.lastName)
+        console.log("Book # " + (i + 1) + "\n" + "Title: " + books[i].title + "\n" + "Author: "
+        + books[i].author.firstName + " " + books[i].author.lastName + "\n -------------------")
     };
 
     /**
