@@ -1,6 +1,38 @@
+p {
+    color: white;
+}
 h1 {
-    color: purple;
+    color: white;
     text-decoration: underline;
+    text-align: center;
 }
 
+h2 {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: antiquewhite;
+}
 
+ul {
+    color: white;
+    border: white;
+    list-style-type: square;
+}
+
+ol {
+    color: white;
+}
+
+body {
+    background-image: url("https://i.pinimg.com/originals/21/5c/7f/215c7fdca6033092baa04b35c17466bd.gif");
+    background-color: grey;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: "Apple SD Gothic Neo";
+}
+
+table, th, td {
+    border: 1px solid black;
+    color: white;
+}
