@@ -71,7 +71,7 @@ ul {
 }
 
 .profile-details{
-    float:none;
+    float:left;
     margin-left: .5em;
     margin-right: .5em;
     width: calc(25% - 1em);
@@ -146,3 +146,4 @@ ul {
 .text-muted {
     color: var(--main-link-color);
 }
+
