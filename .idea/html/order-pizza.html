@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/custom.css">
+  <title>Order Pizza</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Pizza World</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Menu</a>
+      </li>
+
+      <li>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Stores near you!</button>
+        </form>
+      </li>
+      <li>
+    </ul>
+    <button type="button" class="btn btn-light">Sign Up</button>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="text-center">Welcome to Pizza World! </h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Build your own Pizza!</h2>
+</div>
+<div>
+  <div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><span class="badge badge-pill badge-light">1</span>Size and Crust</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><span class="badge badge-pill badge-light">2</span>Cheese and Sauce</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><span class="badge badge-pill badge-light">3</span>Toppings</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><div class="container">
+        <div class="card">
+          <div class= "card-header p-3 mb-2 bg-primary text-white">Choose Size and Crust</div>
+          &nbsp;
+          <div class="container">
+            <div class="card" style="width: 67.55rem;">
+              <div class="card-header">
+                Hand Tossed
+              </div>
+              <form>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                  <li class="list-group-item"><input type="radio" id="html" name="fav_language" value="HTML">
+                    <label for="html">Small(10")</label></li>
+                  <li class="list-group-item"><input type="radio" id="html" name="fav_language" value="HTML">
+                    <label for="html">Medium(12")</label></li>
+                </ul>
+              </form>
+            </div>
+            &nbsp;
+            <div class="card" style="width: 67.55rem;">
+              <div class="card-header">
+                Crispy Thin
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">  Thin enough for optimum crispy to crunch ratio.</li>
+                <li class="list-group-item">  <input type="radio" id="html" name="fav_language" value="HTML">
+                  <label for="html">Medium(12")</label></li>
+                <li class="list-group-item"><input type="radio" id="html" name="fav_language" value="HTML">
+                  <label for="html">Large(14")</label></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><div class="container">
+        <div class="card">
+          <div class= "card-header p-3 mb-2 bg-primary text-white">Choose cheese and Sauce</div>
+          &nbsp;
+          <div class="container">
+            <div class="card" style="width: 66rem;">
+              <div class="card-header">
+                Cheese
+              </div>
+              <form class="form-inline">
+                &nbsp;  <label class="my-1 mr-2" for="inlineFormCustomSelectPref"> &nbsp; &nbsp; How Much?</label>
+                &nbsp;  &nbsp; &nbsp;  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                &nbsp;  &nbsp;  <option selected>&nbsp; Regular...</option>
+                <option value="1">Light</option>
+                <option value="2">Normal</option>
+                <option value="3">Extra</option>
+                <option value="3">Double</option>
+              </select>
+              </form>
+              &nbsp;
+              <div class="card" style="width: 66rem;">
+                <div class="card-header">
+                  Sauce
+                </div>
+                <form class="form-inline">
+                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref"> &nbsp; &nbsp; What type?</label>
+                  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <option value="1">Tomato</option>
+                    <option value="2">Marinara sauce</option>
+                    <option value="3">BBQ Sauce</option>
+                    <option value="3">Alfredo Sauce</option>
+                  </select>
+                </form>
+                <form class="form-inline">
+                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref"> &nbsp; &nbsp; How Much?</label>
+                  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <option selected>Regular...</option>
+                    <option value="1">Light</option>
+                    <option value="2">Normal</option>
+                    <option value="3">Extra</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+</body>
+</html>

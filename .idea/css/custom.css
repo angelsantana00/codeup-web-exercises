@@ -1,0 +1,14 @@
+.jumbotron {
+    background-image:url(../assets/pizza.png) ;
+    margin-top: 20px;
+}
+
+h1 {
+    background: rgba(245, 243, 243, 0.64);
+    color: #454343;
+    position: relative;
+    position: center;
+}
+.card-footer {
+    float: right;
+}
