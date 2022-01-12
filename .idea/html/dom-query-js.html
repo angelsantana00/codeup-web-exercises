@@ -29,19 +29,28 @@
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        var getmain = document.querySelector("#main-header");
+        var mainHeader = document.getElementById("main-header")
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        mainHeader.innerHTML = "JavaScript is Cool";
+
 
         // TODO: Uncomment the next line and get the sub header element by id
-        // var subHeader = ;
+        var subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
+        subHeader.style.color='blue'
 
         // TODO: Uncomment the next line and get all list items
-        // var listItems = ;
+        var listItems = document.getElementsByTagName("li");
 
         // TODO: Set text color on every other list item to grey
+        for (let i=0; i<listItems.length; i++){
+            let dbid = listItems[i].getAttribute("data-dbid");
+            if (dbid%2===0){
+                listItems[i].style.color="grey";
+            }
+        }
         // TODO: Set text color of li with dbid = 1 to blue
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
