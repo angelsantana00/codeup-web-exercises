@@ -11,7 +11,7 @@ let names = [
     {person: 'Jake', letters:4}
 ];
 
-let fourLetter = names.filter(person => person.letters === 4
+let fourLetter = names.filter(person => person.letters === 4);
 
 console.log(fourLetter);
 

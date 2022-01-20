@@ -1,11 +1,11 @@
 
 
-/*function showMultiplicationTable (value) {
+function showMultiplicationTable (value) {
     for ( let x = 1; x <= 10; x++ ){
         console.log(value + "x" + x + "=" + (value * x))
     }
 }
-showMultiplicationTable(10)*/
+showMultiplicationTable(10)
 ///////////////////////////////////////
 
 /*for ( let x = 1; x <=10; x++) {
