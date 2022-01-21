@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Konami Code</title>
+    </head>
+    <body>
+      <h1>Konami Code</h1>
+      <h2>Enter the Secret Code</h2>
+
+      <script src="../js/jqueryfile.js"></script>
+      <script>
+        "use strict";
+
+        $(document).keyup(function(event){
+          console.log(event.keyCode);
+        });
+        var allkeyspressed = ''
+        function keyspressed (event){
+          allkeyspressed +=event.key;
+          var didkeys = (allkeyspressed.includes ("ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightabEnter"));
+          console.log(allkeyspressed)
+          if(didkeys){
+            allkeyspressed= ""
+            alert('GOTCHA')
+
+
+            function activateCheats() {
+              document.body.style.backgroundColor = "black";
+
+              var video = document.getElementById('video');
+              video.setAttribute(src="https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+
+            }
+            activateCheats()
+          }
+
+        }
+
+        $(document).keydown(keyspressed)
+      </script>
+  </body>
+  </html>
