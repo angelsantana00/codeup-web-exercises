@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+      <div class="post">
+
+          <script>
+              function addcontent() {
+                  $.get("../data/blog.json").done(function (data) {
+                      console.log(data);
+                      var html = ''
+                      $('#insertProducts').empty();
+                      data.forEach(function (product) {
+
+                          html = "<tr>"
+                              + "<td>" + product.title + "</td>"
+                              + "<td>" + product.content + "</td>"
+                              + "<td>" + product.categories + "</td>"
+                              + "<td>" + product.date + "</td>" +
+                              "</tr>";
+                          $('#insertProducts').append(html)
+                      })
+
+                  })
+              }
+              addcontent();
+
+              // (function() {
+              //     $.get("../data/blog.json").done(function (data) {
+              //         console.log(data)
+              //
+              // });})
+          </script>
+
+      </div>
+
+
+
+
+</body>
+</html>
