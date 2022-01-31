@@ -12,6 +12,13 @@
             width: 100%;
             height: 700px;
         }
+
+        .marker {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -20,18 +27,19 @@
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
 
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 
 <!-- Mapbox Geocoder Util Methods -->
-<script src="mapbox-geocoder-utils.js"></script>
+<script src="../js/mapbox-geocoder-utils.js"></script>
 
 <!-- Custom JS -->
 <script>
 
     var accessToken = 'pk.eyJ1Ijoic2FudGFuYWJveTAwIiwiYSI6ImNreXhneHB0aDBpZHUyb3B0NDJpamw0cXkifQ.X8lYKRJ7bGPI3m-bmQpGsA';
-
     mapboxgl.accessToken = accessToken;
 
     var map = new mapboxgl.Map({
@@ -57,12 +65,31 @@
         }
 
     ];
+
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function (coordinates) {
+            var popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            map.forEach('click', (e) => {
+                popup.addTo(map);
+            });
+        });
+    }
+
     $('#favorites').click(function () {
         geocode("19178 Blanco Rd #305, San Antonio, TX 78258", token).then(function (result) {
             map.setCenter(result);
             map.setZoom(15);
         });
-        placeMarkerAndPopup(pho, token, map);
+        placeMarkerAndPopup('pho', token, map);
+    });
+
+    favorites.forEach((restaurant) => {
+        placeMarkerAndPopup(restaurant, token, map);
     });
     // //popups
     // var popup1 = new mapboxgl.Popup()
@@ -77,28 +104,9 @@
     //     .setLngLat([-98.45216910517019, 29.69497436424642])
     //     .setHTML("<p>Whataburger</p>")
 
-    function placeMarkerAndPopup(info,token,map) {
-        geocode(info.address, token).then(function (coordinates) {
-            var popup = new mapboxgl.Popup()
-            setHTML(info.popupHTML);
-            var marker = new mapboxgl.Marker()
-                .setLngLat(coordinates)
-                .addTo(map)
-                .setPopup(popup);
-            map.on.forEach('click', (e) => {
-                popup.addTo(map);
-            });
-        });
-    }
-
-
-
-
-
-    placeMarkerAndPopup(alamoInfo, accessToken, map);
-
 
 
 </script>
+
 </body>
 </html>
