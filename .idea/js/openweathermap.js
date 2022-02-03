@@ -13,11 +13,24 @@ var map = new mapboxgl.Map({
 
 
 });
+function geocode(search, token) {
+    var baseUrl = 'https://api.mapbox.com';
+    var endPoint = '/geocoding/v5/mapbox.places/';
+    return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+        .then(function(res) {
+            return res.json();
+            // to get all the data from the request, comment out the following three lines...
+        }).then(function(data) {
+            updateWeather(data.features[0].center[1], data.features[0].center[0]);
+            //console.log(data.features[0].center[0]);
+        });
+}
 
 //Search Function
 $("#searchbtn").click(function (){
     console.log($("#searchtext").val());
     var city = $("#searchtext").val();
+    geocode(city, accessToken);
 })
 
 //MARKER
@@ -83,7 +96,7 @@ function makeCard(weatherConditions) {
     var weatherCards = "";
     console.log(weatherConditions);
     //Converting time to be readbale
-    var Time = weatherConditions;
+    var Time = weatherConditions.dt;
     var milliseconds = Time * 1000;
     var dateObject = new Date(milliseconds);
     var dateFormat = dateObject.toLocaleString();
