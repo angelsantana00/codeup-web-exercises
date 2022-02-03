@@ -1,3 +1,11 @@
+h1 {
+    font-family: Nunito;
+    font-size: 150px;
+    margin: 20px;
+    text-align: center;
+    color: #ADE8F4
+}
+
 * {
     outline: none;
 }
@@ -11,7 +19,7 @@ body {
 body {
     position: center;
     margin: 0;
-    background-color: #023E8A;
+    background-image: linear-gradient(#023E8A, #0077B6, whitesmoke);
 }
 
 .tb {
@@ -104,7 +112,7 @@ button span {
 
 button span:before,
 button span:after {
-    content: "";
+    /*content: "";*/
     position: absolute;
     bottom: 0;
     right: 0;
@@ -149,13 +157,18 @@ button span:after {
     background-color: #fff;
 }
 
-.row {
-    justify-content: space-evenly;
-    margin: 10px;
-    border-radius: 50%;
+.d-inline-flex {
+
 }
 
+
+/*.row {*/
+/*    justify-content: space-evenly;*/
+/*    margin: 10px;*/
+/*    border-radius: 50%;*/
+/*}*/
+
 /*.weather-card-container {*/
-/*    width: 100%;*/
+/*    border: white;*/
 
 /*}*/

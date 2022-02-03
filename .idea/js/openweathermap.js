@@ -1,3 +1,57 @@
+"use strict";
+
+
+//MAP
+var accessToken = 'pk.eyJ1Ijoic2FudGFuYWJveTAwIiwiYSI6ImNreXhneHB0aDBpZHUyb3B0NDJpamw0cXkifQ.X8lYKRJ7bGPI3m-bmQpGsA';
+mapboxgl.accessToken = accessToken;
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    zoom: 10,
+    center: [-98.4916, 29.4252]
+
+
+});
+
+//Search Function
+$("#searchbtn").click(function (){
+    console.log($("#searchtext").val());
+    var city = $("#searchtext").val();
+})
+
+//MARKER
+const marker = new mapboxgl.Marker({
+    draggable: true
+})
+    .setLngLat([-98.4916, 29.4252])
+    .addTo(map);
+
+function onDragEnd() {
+    const lngLat = marker.getLngLat();
+    coordinates.style.display = 'block';
+    coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+
+    reverseGeocode(lngLat, accessToken).then(function (result) {
+        $('#currentCity').html('Current City: ' + result);
+        marker
+            .setLngLat([mapLong, mapLat])
+
+        map.flyTo({
+            center: [mapLong, mapLat],
+            essential: true
+        })
+
+    });
+    mapLong = lngLat.lng
+    mapLat = lngLat.lat
+    updateWeather(mapLat, mapLong);
+
+}
+
+marker.on('dragend', onDragEnd);
+
+//Getting Info
 $.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${29.4252}&lon=${-98.4916}&appid=${weatherKey}`)
     .done(function (weather){
         console.log(weather);
@@ -27,15 +81,16 @@ function updateWeather(latitude, longitude) {
 }
 function makeCard(weatherConditions) {
     var weatherCards = "";
+    console.log(weatherConditions);
     //Converting time to be readbale
-    var Time = weatherConditions.dt;
+    var Time = weatherConditions;
     var milliseconds = Time * 1000;
     var dateObject = new Date(milliseconds);
     var dateFormat = dateObject.toLocaleString();
     var date = dateFormat.split(",");
     date = date[0];
     weatherCards += `<div class='d-inline-flex'>
-  <div class='card m-2' style='width: 18rem;'>
+  <div class='card m-2' style='width: 20rem;'>
       <div class='card-header text-center'> ${date} </div>
           <ul class='list-group list-group-flush'>
               <li class='list-group-item text-center'>
@@ -48,11 +103,4 @@ function makeCard(weatherConditions) {
           </ul>
       </div>
   </div>`;
-    $(".weather-card-container").append(weatherCards);
-
-//         function getForecast(){
-//             $.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${29.4252}&lon=${-98.4916}&appid=${weatherKey}`)
-//     .done(function (weather){
-//     console.log(weather);
-// })
-};
+    $(".weather-card-container").append(weatherCards);}

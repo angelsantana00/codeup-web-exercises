@@ -15,6 +15,20 @@
             width: 100%;
             height: 700px;
         }
+
+         .coordinates {
+             background: rgba(0, 0, 0, 0.5);
+             color: #fff;
+             position: absolute;
+             bottom: 40px;
+             left: 10px;
+             padding: 5px 10px;
+             margin: 0;
+             font-size: 11px;
+             line-height: 18px;
+             border-radius: 3px;
+             display: none;
+         }
     </style>
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
@@ -33,11 +47,11 @@
 <div id="cover">
     <form method="get" action="">
         <div class="tb">
-            <div class="td"><input type="text" placeholder="Search" required></div>
+            <div class="td"><input id="searchtext" type="text" placeholder="Search" required></div>
             <div class="td" id="s-cover">
-                <button type="submit">
-                    <div id="s-circle"></div>
-                    <span></span>
+                <button id="searchbtn" type="button">Submit
+<!--                    <div id="s-circle"></div>-->
+<!--                    <span></span>-->
                 </button>
             </div>
         </div>
@@ -119,32 +133,12 @@
 
 
     <div id="map"></div>
+    <pre id="coordinates" class="coordinates"></pre>
 </div>
 
 
-
-<script>
-
-    var accessToken = 'pk.eyJ1Ijoic2FudGFuYWJveTAwIiwiYSI6ImNreXhneHB0aDBpZHUyb3B0NDJpamw0cXkifQ.X8lYKRJ7bGPI3m-bmQpGsA';
-    mapboxgl.accessToken = accessToken;
-
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [-98.4916, 29.4252]
-    });
-
-</script>
-
-
-
-
-
-
-
-<script src="../js/openweathermap.js"></script>
 <script src="../js/jqueryfile.js"></script>
+<script src="../js/openweathermap.js"></script>
 
 
 </body>
