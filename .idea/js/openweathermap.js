@@ -1,7 +1,7 @@
 "use strict";
 
 
-//MAP
+//                     MAP           ////////////////////////////
 var accessToken = 'pk.eyJ1Ijoic2FudGFuYWJveTAwIiwiYSI6ImNreXhneHB0aDBpZHUyb3B0NDJpamw0cXkifQ.X8lYKRJ7bGPI3m-bmQpGsA';
 mapboxgl.accessToken = accessToken;
 
@@ -10,7 +10,6 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/streets-v9',
     zoom: 10,
     center: [-98.4916, 29.4252]
-
 
 });
 function geocode(search, token) {
@@ -26,14 +25,14 @@ function geocode(search, token) {
         });
 }
 
-//Search Function
+//                   Search Function                       ///////////////////////////
 $("#searchbtn").click(function (){
     console.log($("#searchtext").val());
     var city = $("#searchtext").val();
     geocode(city, accessToken);
 })
 
-//MARKER
+//                   MARKER                               ///////////////////////////////
 const marker = new mapboxgl.Marker({
     draggable: true
 })
@@ -64,7 +63,7 @@ function onDragEnd() {
 
 marker.on('dragend', onDragEnd);
 
-//Getting Info
+//                 Getting Info                ////////////////////////////
 $.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${29.4252}&lon=${-98.4916}&appid=${weatherKey}`)
     .done(function (weather){
         console.log(weather);
@@ -92,10 +91,11 @@ function updateWeather(latitude, longitude) {
         }
     });
 }
+
+//                 Card Creator                //////////////////////////
 function makeCard(weatherConditions) {
     var weatherCards = "";
     console.log(weatherConditions);
-    //Converting time to be readbale
     var Time = weatherConditions.dt;
     var milliseconds = Time * 1000;
     var dateObject = new Date(milliseconds);
