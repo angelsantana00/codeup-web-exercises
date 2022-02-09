@@ -28,7 +28,25 @@
 //     Input: [2,3,5,8,3,1,2,6,3,2,7,8,2,4,7]
 //      expected output: [2,3,5,8,1,6,7,4]
 
-let chars = [2,3,5,8,3,1,2,6,3,2,7,8,2,4,7] ;
-let uniqueChars = [...new Set(chars)];
+// let chars = [2,3,5,8,3,1,2,6,3,2,7,8,2,4,7] ;
+// let uniqueChars = [...new Set(chars)];
+//
+// console.log(uniqueChars);
 
-console.log(uniqueChars);
+function vowel_count(str1)
+{
+    var vowel_list = 'aeiouAEIOU';
+    var vcount = 0;
+
+    for(var x = 0; x < str1.length ; x++)
+    {
+        if (vowel_list.indexOf(str1[x]) !== -1)
+        {
+            vcount += 1;
+        }
+
+    }
+    return vcount;
+}
+
+console.log(vowel_count('helicopter'));
