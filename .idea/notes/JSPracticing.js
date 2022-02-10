@@ -33,20 +33,30 @@
 //
 // console.log(uniqueChars);
 
-function vowel_count(str1)
-{
-    var vowel_list = 'aeiouAEIOU';
-    var vcount = 0;
+// function vowel_count(str1)
+// {
+//     var vowel_list = 'aeiouAEIOU';
+//     var vcount = 0;
+//
+//     for(var x = 0; x < str1.length ; x++)
+//     {
+//         if (vowel_list.indexOf(str1[x]) !== -1)
+//         {
+//             vcount += 1;
+//         }
+//
+//     }
+//     return vcount;
+// }
+//
+// console.log(vowel_count('helicopter'));
 
-    for(var x = 0; x < str1.length ; x++)
-    {
-        if (vowel_list.indexOf(str1[x]) !== -1)
-        {
-            vcount += 1;
-        }
-
+const getRepeatedChars = (str) => {
+    const chars = {};
+    for (const char of str) {
+        chars[char] = (chars[char] || 0) + 1;
     }
-    return vcount;
+    return Object.entries(chars).filter(char => char[1] > 1).map(char => char[0]);
 }
 
-console.log(vowel_count('helicopter'));
+console.log(getRepeatedChars('adsjfdsfsfjsdjfhacabcsbajda'));
