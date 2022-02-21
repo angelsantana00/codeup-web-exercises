@@ -85,6 +85,8 @@
             <li>Davis Mountains</li>
         </ul>
 
+        <button class="btn2">Yellowfy</button>
+
         <script>
             "use strict";
 
@@ -100,6 +102,18 @@
             //         $('dd').addClass('invisible');
             //     });
             // });
+
+            $('li').addClass('lastcolor');
+
+            $(".lastcolor").click(coloryellow);
+            function coloryellow() {
+                $('.btn2').click(function () {
+                    $('li').each(function () {
+                        $(this).children().last().css('background-color', 'yellow').toggleClass()
+                    })
+                })
+            }
+
         </script>
 
         </body>
