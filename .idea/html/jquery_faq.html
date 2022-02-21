@@ -109,7 +109,23 @@
             function coloryellow() {
                 $('.btn2').click(function () {
                     $('li').each(function () {
-                        $(this).children().last().css('background-color', 'yellow').toggleClass()
+                        $(this).last().children().css('background-color', '#FFFF00').toggleClass();
+                    })
+                })
+            }
+
+            boldit()
+            function boldit() {
+                $('h3').click(function () {
+                    $(this).next().children().css('font-weight', "bold")
+                })
+            }
+
+            colorblue()
+            function colorblue() {
+                $('ul').click(function () {
+                    $('ul').each(function () {
+                        $(this).children().first().css('color', 'blue').toggleClass()
                     })
                 })
             }
